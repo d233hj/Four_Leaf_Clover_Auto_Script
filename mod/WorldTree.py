@@ -153,9 +153,11 @@ class WorldTree:
         shuangxuan = cv2.imread("./img/shuangxuanze.png")
         maoxianzhong = cv2.imread("./img/maoxianzhong.png")
         huodedaoju = cv2.imread("./img/huodedaoju.png")
+        shezhi =cv2.imread("./img/shezhi.png")
+
         while 1:
-            if adbTool.apper_to_click(maoxianzhong):
-                pass
+            if adbTool.apper_to_click(shezhi):
+                return False
             if adbTool.apper_to_click(fangqi):
                 continue
             if adbTool.apper_to_click(shuangxuan):
@@ -172,7 +174,7 @@ class WorldTree:
                 if check_nums > 0:
                     continue
                 print("完成奇遇！")
-                break
+                return True
 
     def quit_maoxian(self):
         """
@@ -211,22 +213,39 @@ class WorldTree:
         qiyu1 = cv2.imread("./img/qiyu1.png")
         qiyu2 = cv2.imread("./img/qiyu2.png")
         xiuxi = cv2.imread("./img/xiuxi.png")
+        fangqizhandou = cv2.imread("./img/fangqizhandou.png")
 
         maoxianzhong = cv2.imread("./img/maoxianzhong.png")
         assert 0 < check_nums < 1024
         while 1:
             if adbTool.apper_to_click(qiyu):
-                self.__qiyu()
-                return True
+                if self.__qiyu():
+                    return True
+                else:
+                    while 1:
+                        if adbTool.apper_to_click(fangqizhandou):
+                            return False
             if adbTool.apper_to_click(qiyu1):
-                self.__qiyu()
-                return True
+                if self.__qiyu():
+                    return True
+                else:
+                    while 1:
+                        if adbTool.apper_to_click(fangqizhandou):
+                            return False
             if adbTool.apper_to_click(qiyu2):
-                self.__qiyu()
-                return True
+                if self.__qiyu():
+                    return True
+                else:
+                    while 1:
+                        if adbTool.apper_to_click(fangqizhandou):
+                            return False
             if adbTool.apper_to_click(xiuxi):
-                self.__xiuxi()
-                return True
+                if self.__qiyu():
+                    return True
+                else:
+                    while 1:
+                        if adbTool.apper_to_click(fangqizhandou):
+                            return False
 
             if adbTool.research_img(maoxianzhong):
                 check_nums = check_nums - 1
