@@ -26,10 +26,12 @@ def test2():
     else:
         world_tree.quit_maoxian()
 
-
+"""
+从此处运行脚本
+"""
 try:
     i = 0
-    while i < 100:
+    while i < 1000:
         test2()
         i = i + 1
 except BaseException as e:
