@@ -1,0 +1,12 @@
+Index: venv/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/venv/.gitignore b/venv/.gitignore
+new file mode 100644
+--- /dev/null	
++++ b/venv/.gitignore	
+@@ -0,0 +1,2 @@
++# created by virtualenv automatically
++*
